@@ -16,7 +16,7 @@ async function run(command) {
     
     const {
         REPO_OWNER: SiddamsettySahithi,
-        REPO_NAME: Test-Dispatch,
+        REPO_NAME: test-dispatch,
         GITHUB_TOKEN: {{secrets.TOKEN}},
     } = process.env;
 
