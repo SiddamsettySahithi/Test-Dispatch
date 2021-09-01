@@ -1,7 +1,7 @@
 name: Ping
 env:
   REPO_OWNER: SiddamsettySahithi
-  REPO_NAME: Test-Dispatch
+  REPO_NAME: test-dispatch
   GITHUB_TOKEN: ${{ secrets.TOKEN }}
 on:
   repository_dispatch:
