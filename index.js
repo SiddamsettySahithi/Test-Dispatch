@@ -15,9 +15,9 @@ async function run(command) {
     };
     
     const {
-        REPO_OWNER: owner,
-        REPO_NAME: repo,
-        GITHUB_TOKEN: token,
+        REPO_OWNER: SiddamsettySahithi,
+        REPO_NAME: Test-Dispatch,
+        GITHUB_TOKEN: {{secrets.TOKEN}},
     } = process.env;
 
     const isAllInOne = workflowType === "allinone";
