@@ -3,10 +3,6 @@
 > Implements ability to trigger workflows from separate workflow files
 > Implements ability to trigger same workflow in different running modes 
 
-## Trigger github actions from external tools walkthrough
-
-[![Trigger github actions from external tools walkthrough](https://img.youtube.com/vi/84kUf9ycr9A/0.jpg)](https://youtu.be/84kUf9ycr9A)
-
 ## Multiple workflows 
 There are 3 workflows 
 - Ping - Running this workflow will trigger the Pong workflow through the use of repository dispatch
