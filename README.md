@@ -7,8 +7,6 @@
 
 [![Trigger github actions from external tools walkthrough](https://img.youtube.com/vi/84kUf9ycr9A/0.jpg)](https://youtu.be/84kUf9ycr9A)
 
-> Click To Watch ☝️ - Trigger github actions from external tools
-
 ## Multiple workflows 
 There are 3 workflows 
 - Ping - Running this workflow will trigger the Pong workflow through the use of repository dispatch
