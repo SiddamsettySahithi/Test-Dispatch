@@ -1,0 +1,51 @@
+name: Create Repo Pipeline
+
+on:
+  workflow_dispatch:
+    inputs:
+      repoName:
+        description: "Name of repo to create"
+        required: true
+
+jobs:
+
+  Business-Logic-Checks:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Check Input Params
+      if: ${{ always() }}
+      run: |
+        echo "Check Input Params"
+        echo ${{ github.event.inputs.RepoName }}
+
+    - name: Check Repo name
+      run: |
+        if [[ ! "${{ github.event.inputs.repoName }}" =~ ^pos2- ]]; then
+          echo "Repo name must start with pos2-, you provided ${{ github.event.inputs.repoName }}"
+          exit 1
+        fi
+
+  Create-Repo:
+    needs: [ Business-Logic-Checks ]
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: setup python
+      uses: actions/setup-python@v2
+      with:
+        python-version: 3.8 #install the python needed
+
+    - name: Install PyGithub dependencies
+      run: pip install PyGithub
+
+    - name: Execute Create Repo script
+      run: python .github/scripts/repo-create.py
+      env:
+        TOKEN: ${{ secrets.POS2_REPO_SERVICE_TOKEN }}
+        REPO_NAME: ${{ github.event.inputs.RepoName }}
+        REPO_ORG: restaurant-technology-org
